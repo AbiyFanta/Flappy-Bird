@@ -1,2 +1,18 @@
 # Flappy-Bird
-The flappy bird game in python.
+
+
+# Description
+This is a simple flappy bird game using Python and elements of pygame. The user uses the spacebar to flap the bird and manouver through the pipes. The objective of the game is to flap through as many pipes as possible without hitting any. 
+
+# Features
+Simple gameplay with intuitive controls.
+
+# Installation
+Clone the repository:
+git clone https://github.com/Melakoo/Flappy-Bird
+
+# Contributions
+Wanted to give credit to origignal creators as this project used quite a few images off of google images, a few were edited in photoshop so they could be used as assets for the game. It wouldn't make much sense to put a legal license on this.
+
+# Contributing
+If you'd like to contribute please open and issue or pull request!
