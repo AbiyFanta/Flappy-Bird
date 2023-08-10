@@ -11,13 +11,18 @@ win_width = 551
 window = pygame.display.set_mode((win_width, win_height))
 
 # Images
+# Bird
 bird_images = [pygame.image.load("assets/bird_down.png"),
                pygame.image.load("assets/bird_mid.png"),
                pygame.image.load("assets/bird_up.png")]
+# Background
 skyline_image = pygame.image.load("assets/background.png")
+# Ground
 ground_image = pygame.image.load("assets/ground.png")
+# Pipes
 top_pipe_image = pygame.image.load("assets/pipe_top.png")
 bottom_pipe_image = pygame.image.load("assets/pipe_bottom.png")
+# Game Screens
 game_over_image = pygame.image.load("assets/game_over.png")
 start_image = pygame.image.load("assets/start.png")
 
@@ -140,32 +145,32 @@ def main():
         # Reset Frame
         window.fill((0, 0, 0))
 
-        # User Input
+        # Input
         user_input = pygame.key.get_pressed()
 
-        # Draw Background
+        # Background
         window.blit(skyline_image, (0, 0))
 
         # Spawn Ground
         if len(ground) <= 2:
             ground.add(Ground(win_width, y_pos_ground))
 
-        # Draw - Pipes, Ground and Bird
+        # LoaDraw - Pipes, Ground and Bird
         pipes.draw(window)
         ground.draw(window)
         bird.draw(window)
 
-        # Show Score
+        # Score
         score_text = font.render('Score: ' + str(score), True, pygame.Color(255, 255, 255))
         window.blit(score_text, (20, 20))
 
-        # Update - Pipes, Ground and Bird
+        # Update
         if bird.sprite.alive:
             pipes.update()
             ground.update()
         bird.update(user_input)
 
-        # Collision Detection
+        # Collision
         collision_pipes = pygame.sprite.spritecollide(bird.sprites()[0], pipes, False)
         collision_ground = pygame.sprite.spritecollide(bird.sprites()[0], ground, False)
         if collision_pipes or collision_ground:
@@ -177,7 +182,7 @@ def main():
                     score = 0
                     break
 
-        # Spawn Pipes
+        # Create Pipes
         if pipe_timer <= 0 and bird.sprite.alive:
             x_top, x_bottom = 550, 550
             y_top = random.randint(-600, -480)
@@ -198,7 +203,7 @@ def menu():
     while game_stopped:
         quit_game()
 
-        # Draw Menu
+        # Menu
         window.fill((0, 0, 0))
         window.blit(skyline_image, (0, 0))
         window.blit(ground_image, Ground(0, 520))
@@ -206,7 +211,7 @@ def menu():
         window.blit(start_image, (win_width // 2 - start_image.get_width() // 2,
                                   win_height // 2 - start_image.get_height() // 2))
 
-        # User Input
+        # Input
         user_input = pygame.key.get_pressed()
         if user_input[pygame.K_SPACE]:
             main()
