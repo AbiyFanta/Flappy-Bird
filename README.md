@@ -16,4 +16,4 @@ I ran it in pycharm and should work with Python 3.X and must have pygame install
 Wanted to give credit to origignal creators of flappy bird, DOTGEARS. at this project used quite a few images off of google images, a few were edited in photoshop so they could be used as assets for the game. Whatever I got from online is likely based off if not direcly from the orginal mobile game so it wouldn't make much sense to put a legal license on this.
 
 # Contributing
-If you'd like to contribute please open and issue or pull request!
+If you'd like to contribute please open an issue or pull request!
